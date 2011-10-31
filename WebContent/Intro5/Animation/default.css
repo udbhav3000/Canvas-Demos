@@ -1,0 +1,34 @@
+#outerDiv{
+  display: table;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#innerDiv{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#divOldCode{
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  height: 700px;
+  width: 450px;
+  border:1px solid black;
+  text-align: left;
+  visibility: hidden;
+}
+
+#divNewCode{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  height: 700px;
+  width: 450px;
+  border:1px solid black;
+  text-align: left;
+  visibility: hidden;
+}

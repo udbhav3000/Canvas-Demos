@@ -1,0 +1,12 @@
+#outerDiv{
+  display: table;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#innerDiv{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}

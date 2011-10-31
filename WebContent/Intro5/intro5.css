@@ -1,0 +1,52 @@
+#outerDiv{
+  display: table;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#innerDiv{
+  display: table-cell;
+  text-align: center;
+  vertical-align: top;
+}
+
+table{
+  position:fixed;
+  border:1px solid black;
+}
+
+#tblRect{
+  top:10px;
+}
+#tblLine{
+  top:190px;
+}
+#tblCurves{
+  top: 340px;
+}
+#tblPath{
+  top: 660px;
+}
+#tblTransform{
+  top: 660px;
+  left: 250px;
+}
+#tblBeforeAnimation{
+  top: 660px;
+  left: 700px;
+}
+
+#divCode{
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  height: 700px;
+  width: 450px;
+  border:1px solid black;
+  text-align: center;
+}
+
+img{
+  width:450px;
+}

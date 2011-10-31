@@ -1,0 +1,201 @@
+<html>
+  <head>
+  <title>Intro to 5</title>
+    <script type="application/x-javascript" src='intro5.js' ></script>
+    <script type="application/x-javascript" src='rect.js' ></script>
+    <script type="application/x-javascript" src='line.js' ></script>
+    <script type="application/x-javascript" src='curves.js' ></script>
+    <script type="application/x-javascript" src='path.js' ></script>
+    <script type="application/x-javascript" src='transform.js' ></script>
+    <script type="application/x-javascript" src='modifyDom.js' ></script>
+    <link rel="stylesheet" type="text/css" href="intro5.css" />
+  </head>
+  <body onload="init();">
+  <div style='text-align: center'>
+    <input type="button" value='Previous' onclick="prev();">
+    <input type="button" value='Next' onclick="next();">
+    <br>
+    <input type="button" value='Clear' onclick="clearCanvas();">
+  </div>
+  
+  <div>
+  <table id=tblRect style='visibility: hidden'>
+    <tr>
+      <th colspan=3>Rect</th>
+    </tr>
+    <tr style='text-align: center'>
+      <td></td>
+      <td></td>
+      <td>Colour</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id ="chkBorder"></td>
+      <td>Border</td>
+      <td><input type="text" id=txtBorder value="black" size="5 "></td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id ="chkBg"></td>
+      <td>Background</td>
+      <td><input type="text" id=txtBg value="cyan" size="5 "></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=3><input type="button" value='Draw' onclick="drawRect();">
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=3><input type="button" value='Case 1' onclick="drawRectAlt();">
+    </tr>
+  </table>
+  <br>
+  
+  <table id=tblLine style='visibility: hidden'>
+    <tr>
+      <th colspan=4>Line</th>
+    </tr>
+    <tr style='text-align: center'>
+      <td></td>
+      <td></td>
+      <td>Colour</td>
+      <td>Thickness</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id ="chkLine1"></td>
+      <td>Line</td>
+      <td><input type="text" id=txtLine1 value="black" size="5 "></td>
+      <td><input type="text" id=txtLine1Width value="1" size="2 "></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=4><input type="button" value='Draw' onclick="drawLine();">
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=4><input type="button" value='Draw using Path' onclick="drawLineAlt();">
+    </tr>
+  </table>
+  
+  <table id=tblCurves style='visibility: hidden'>
+    <tr>
+      <th colspan=4>Curves</th>
+    </tr>
+    <tr style='text-align: center'>
+      <td></td>
+      <td></td>
+      <td>Start Deg</td>
+      <td>Stop Deg</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id ="chkCurve1"></td>
+      <td>Circle</td>
+      <td><input type="text" id=txtCurve1Start value="0" size="2 "></td>
+      <td><input type="text" id=txtCurve1Stop value="90" size="2 "></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=4><input type="button" value='Draw' onclick="drawCircle();">
+    </tr>
+    
+    <tr style='text-align: center'>
+      <td></td>
+      <td></td>
+      <td>Ctrl X</td>
+      <td>Ctrl Y</td>
+    </tr>
+    <tr>
+      <td><input type="checkbox" id ="chkCurve2"></td>
+      <td>Quadratic</td>
+      <td><input type="text" id=txtCurve2X value="250" size="2 "></td>
+      <td><input type="text" id=txtCurve2Y value="150" size="2 "></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=4><input type="button" value='Draw' onclick="drawQuad();">
+    </tr>
+    
+    
+    <tr style='text-align: center'>
+      <td></td>
+      <td></td>
+      <td>Ctrl X</td>
+      <td>Ctrl Y</td>
+    </tr>
+    <tr>
+      <td rowspan=2><input type="checkbox" id ="chkCurve3"></td>
+      <td rowspan=2>Bezier</td>
+      <td><input type="text" id=txtCurve3X1 value="180" size="2 "></td>
+      <td><input type="text" id=txtCurve3Y1 value="250" size="2 "></td>
+    </tr>
+    <tr>
+      <td><input type="text" id=txtCurve3X2 value="320" size="2 "></td>
+      <td><input type="text" id=txtCurve3Y2 value="250" size="2 "></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=2><input type="button" value='Draw' onclick="drawBezier();">
+      <td colspan=2><input type="button" value='Another' onclick="drawInterestingBezier();">
+    </tr>
+    
+  </table>
+  
+    <table id=tblPath style='visibility: hidden'>
+    <tr style='text-align: center;'>
+      <th colspan=3 >Path & Gradient</th>
+    </tr>
+    
+    <tr style='text-align: center'>
+      <td><input type="checkbox" id ="chkPath1"></td>
+      <td><input type="button" value='Step' onclick="drawPath();"></td> 
+    </tr>
+    <tr style='text-align: center'>
+      <td rowspan=2><input type="checkbox" id ="chkGradient1"></td>
+      <td><input type="button" value='Gradient' onclick="drawGradient();"></td> 
+      <td><input type="button" value='See Full' onclick="drawFullGradient();"></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td colspan=2><input type="button" value='Gradient Power' onclick="drawCircleGradient();"></td>
+    </tr>
+    
+  </table>
+  
+  <table id=tblTransform style='visibility: hidden'>
+    <tr style='text-align: center;'>
+      <th colspan=3 >Transformation</th>
+    </tr>
+    
+    <tr style='text-align: center'>
+      <td><input type="checkbox" id ="chkTransform1"></td>
+      <td><input type="button" value='Translate' onclick="drawTranslate();"></td> 
+      <td><input type="button" value='Better Translate' onclick="drawBetterTranslate();"></td>
+    </tr>
+    <tr style='text-align: center'>
+      <td><input type="checkbox" id ="chkTransform2"></td>
+      <td><input type="button" value='Rotate' onclick="drawRotate();"></td> 
+      <td><input type="button" value='Better Rotate' onclick="drawRotateBetter();"></td>
+    </tr>
+    
+  </table>
+   <table id=tblBeforeAnimation style='visibility: hidden'>
+    <tr>
+      <th>Some More Stuff in Canvas</th>
+    </tr>
+    
+    <tr id=tblBeforeAnimationRow1 style='text-align: center; visibility: hidden'>
+      <td>Drawing Text and Image on Canvas</td> 
+    </tr>
+    <tr id=tblBeforeAnimationRow2 style='text-align: center; visibility: hidden'>
+      <td>Shadows and Transparency Effect.</td>
+    </tr>
+    <tr id=tblBeforeAnimationRow3 style='text-align: center; visibility: hidden'>
+     <td>Further Transformations like Scale, Skew ...</td>
+    </tr>
+    <tr style='text-align: center;'>
+    <td><a href='http://www.html5canvastutorials.com'>www.html5canvastutorials.com</a></td>
+    </tr>
+    <tr id=tblBeforeAnimationRow4 style='text-align: center; visibility: hidden'>
+     <td><input type="button" value='Let&#39;s move onto Animation.' onclick="location.href='Animation/Intro5_Animation.html'"></td>
+    </tr>
+    
+  </table>
+  
+  <div id=divCode>
+    <br>
+    Code View
+  </div>
+  
+  </div>
+  </body>
+</html>
